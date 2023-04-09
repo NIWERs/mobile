@@ -1,0 +1,59 @@
+<Enter>:
+    MDBoxLayout:
+        id: bl
+        orientation: 'vertical'
+        size: root.width, root.height
+
+        MDAnchorLayout:
+            id: a1
+            size_hint: 1, .05
+
+            MDLabel:
+                id: hello
+                color: (0, 0, 0, 1)
+                text: "Wellcome!"
+                halign: 'center'
+                font_size: 32
+
+        MDAnchorLayout:
+            id: a2
+            size_hint: 1, .95
+
+            MDBoxLayout:
+                id: b3
+                orientation: 'vertical'
+                size: root.width, root.height
+                padding: [150, 395, 150, 395]
+
+                MDTextField:
+                    id: email
+                    multiline: False
+                    font_size: 32
+                    hint_text: 'Email'
+
+                MDTextField:
+                    id: pw
+                    multiline: 0
+                    password: True
+                    font_size: 32
+                    hint_text: 'Пароль'
+
+                MDBoxLayout:
+                    id: b4
+                    size_hint: 1, .02
+                    padding: [0, 10, 0, 25]
+                    spacing: 10
+
+                    MDFillRoundFlatButton:
+                        id: b5
+                        text: 'Зарегистрироваться'
+                        size_hint: 0.05, 0.85
+                        on_release:
+                            root.reg()
+
+                    MDFillRoundFlatButton:
+                        id: b6
+                        text: 'Войти'
+                        size_hint: 0.05, 0.85
+                        on_release:
+                            root.app()

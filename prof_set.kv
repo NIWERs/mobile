@@ -1,0 +1,59 @@
+<Prof_set>:
+    MDBoxLayout:
+        id: bl
+        size: root.width, root.height
+        orientation: 'vertical'
+        padding: [135, 150, 125, 310]
+        spacing: 10
+        MDBoxLayout:
+            size: root.width, root.height
+            orientation: 'vertical'
+            MDTextField:
+                id: name
+                font_size: 23
+                hint_text: 'Ф.И.О'
+                multiline: 0
+
+            MDBoxLayout:
+                MDLabel:
+                    text: 'ученик'
+                    size_hint_x: .2
+                Check:
+                    id: pupil
+                    size_hint_x: .2
+                MDLabel:
+                    text: 'учитель'
+                    size_hint_x: .25
+                Check:
+                    id: teach
+                    size_hint_x: .2
+
+            MDBoxLayout:
+
+                spacing: 10
+                Image:
+                    id: ava_s
+                    source: 'test.png'
+
+                MDBoxLayout:
+                    orientation: 'vertical'
+                    spacing: 10
+                    padding: [0, 10, 0, 60]
+                    MDRectangleFlatButton:
+                        text: 'Изменить'
+                        size_hint: .7, .2
+                        on_release: root.change_image()
+
+                    MDRectangleFlatButton:
+                        text: 'Удалить'
+                        size_hint: .7, .2
+            MDAnchorLayout:
+                padding: [0, 40, 0, 0]
+                size_hint: 1, .2
+                MDRectangleFlatButton:
+                    size_hint: 1, .8
+                    id: save
+                    text: 'Сохранить'
+                    on_release:
+                        root.save()
+

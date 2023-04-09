@@ -1,0 +1,91 @@
+<Reg>:
+    MDBoxLayout:
+        id: bl
+        orientation: 'vertical'
+        size: root.width, root.height
+
+        MDAnchorLayout:
+            id: a1
+            size_hint: 1, .05
+
+            MDLabel:
+                id: hello
+                color: (0, 0, 0, 1)
+                text: "Wellcome!"
+                halign: 'center'
+                font_size: 32
+
+        MDAnchorLayout:
+            id: a2
+            size_hint: 1, .95
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: [120, 270, 120, 270]
+
+                MDTextField:
+                    id: name
+                    required: True
+                    font_size: 23
+                    hint_text: 'Ф.И.О'
+                    multiline: 0
+
+                MDBoxLayout:
+                    size_hint: 1, .1
+                    MDLabel:
+                        text: 'ученик'
+                    Check:
+                        id: pupil
+                    MDLabel:
+                        text: 'учитель'
+                    Check:
+                        id: teach
+
+
+                MDTextField:
+                    id: email_r
+                    required: True
+                    font_size: 23
+                    hint_text: 'Email'
+                    multiline: 0
+
+                MDTextField:
+                    id: passw
+                    required: True
+                    font_size: 23
+                    hint_text: 'Пароль'
+                    multiline: 0
+
+                MDTextField:
+                    id: re_pass
+                    required: True
+                    font_size: 23
+                    hint_text: 'Повторите пароль'
+                    multiline: 0
+
+                MDBoxLayout:
+                    spacing: 10
+                    padding: [0, 10, 0, 0]
+                    size_hint: 1, .05
+                  
+                    MDFillRoundFlatButton:
+                        id: b5
+                        text: 'Отмена'
+                      
+                        md_bg_color: (1, 0, 0, 0.8)
+                        on_release: root.cansel()
+
+
+                    MDFillRoundFlatButton:
+                        id: b6
+                      
+                        text: 'Зарегистрироваться'
+                        on_release:
+                            root.regist()
+
+<Check@MDCheckbox>:
+    group: 'group'
+
+
+
+

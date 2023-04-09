@@ -1,0 +1,38 @@
+<Proj_Creation>:
+    orientation: 'vertical'
+    MDBoxLayout:
+        size: root.size
+        orientation: 'vertical'
+        padding: [50, 150, 50, 250]
+
+        MDCard:
+            md_bg_color: "#DCDCDC"
+            radius: 15
+            MDAnchorLayout:
+                id: a2
+                MDBoxLayout:
+                    id: b3
+                    orientation: 'vertical'
+                    size: root.width, root.height
+                    padding: [100, 195, 100, 195]
+                    MDTextField:
+                        id: name_proj
+                        multiline: False
+                        font_size: 23
+                        hint_text: 'Название проекта'
+                    MDTextField:
+                        id: link
+                        multiline: 0
+                        font_size: 23
+                        hint_text: 'Яндекс документы\n(ссылка на папку)'
+                        on_focus: root.yandex()
+                    MDRectangleFlatButton:
+                        id: reset
+                        text: 'Создать'
+                        font_size: 20
+                        size_hint: 1, 0.01
+                        pos_hint: {"center_x": .5}
+                        on_release: root.start_project()
+
+
+

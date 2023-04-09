@@ -1,0 +1,92 @@
+<Progress>:
+    size: root.width, root.height
+    orientation: 'vertical'
+    MDAnchorLayout:
+        size_hint_y: 0.1
+        MDTextButton:
+            id: link
+            text: 'Расчет стоимости тепловых потерь при открывании...'
+            color: 'blue'
+            font_size: 32
+            on_release: root.open_project()
+
+    MDBoxLayout:
+        size: root.width, root.height
+        orientation: 'vertical'
+        padding: [63, 10, 63, 300]
+        spacing: 10
+        MDCard:
+            md_bg_color: "#ADD8E6"
+            radius: 50
+            padding: [30,0,10,0]
+            size_hint: 1, 0.4
+            MDBoxLayout:
+
+                MDLabel:
+                    text: '1) Тема'
+                    font_size: 32
+                MDCheckbox:
+                    id: one
+                    on_active: root.prog_init()
+        MDCard:
+            md_bg_color: "#ADD8E6"
+            radius: 50
+            size_hint: 1, 0.4
+            padding: [30,0,10,0]
+            MDBoxLayout:
+
+                MDLabel:
+                    text: '2) Введение'
+                    font_size: 32
+                MDCheckbox:
+                    id: two
+                    on_active: root.prog_init()
+        MDCard:
+            md_bg_color: "#ADD8E6"
+            radius: 50
+            size_hint: 1, 0.4
+            padding: [30,0,10,0]
+            MDBoxLayout:
+
+                MDLabel:
+                    text: '3) Основная часть'
+                    font_size: 32
+                MDCheckbox:
+                    id: three
+                    on_active: root.prog_init()
+        MDCard:
+            md_bg_color: "#ADD8E6"
+            radius: 50
+            size_hint: 1, 0.4
+            padding: [30,0,10,0]
+            MDBoxLayout:
+                MDLabel:
+                    text: '4) Приложение'
+                    font_size: 32
+                MDCheckbox:
+                    id: four
+                    on_active: root.prog_init()
+        MDCard:
+            md_bg_color: "#ADD8E6"
+            radius: 50
+            size_hint: 1, 0.4
+            padding: [30,0,10,0]
+            MDBoxLayout:
+                MDLabel:
+                    text: '5) Вывод'
+                    font_size: 32
+                MDCheckbox:
+                    id: five
+                    on_active: root.prog_init()
+        MDProgressBar:
+            id: progress
+            size_hint: 1, 0.15
+            value: 0
+            color: (0, 1, 0, .5)
+        MDRectangleFlatButton:
+            text: 'Назад'
+            font_size: 32
+            pos_hint: {"center_x": .5}
+            size_hint_x: .5
+            on_release: root.cancel()
+

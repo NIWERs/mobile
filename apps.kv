@@ -1,0 +1,138 @@
+<App>:
+    MDBoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        padding: [0, 0, 0, 20]
+
+        MDBoxLayout:
+            orientation: 'vertical'
+            
+
+            MDBottomNavigation:
+                MDBottomNavigationItem:
+                    name: 'screen 1'
+                    id: chat
+                    text: 'Чат'
+                    icon: 'comment'
+                    MDBoxLayout:
+                        id: chat_bl
+                        size: root.height, root.width
+                    MDBoxLayout:
+                        id: bl_cancel
+                        size_hint: 1, 0.2
+                        padding: [450, 0, 0, 30]
+                        MDTextButton:
+                            id: ch_cancel
+                            font_size: 32
+                            text: "Добавить"
+                            color: "blue"
+                            on_release: root.cancel()
+
+                MDBottomNavigationItem:
+                    name: 'screen 2'
+                    text: 'Конструктор'
+                    icon: 'widgets'
+                    id: cons
+                    MDGridLayout:
+                        size: root.size
+                        cols: 2
+                        spacing: 10
+                        padding: [5, 5, 5, 5]
+                        MDCard:
+                            padding: 20
+                            size_hint: .5, .5
+                            line_color: (0.2, 0.2, 0.5, 0.8)
+                            MDBoxLayout:
+                                orientation: 'vertical'
+                                MDLabel:
+                                    text: "Формулировка цели"
+                                    font_size: 32
+                                    size_hint_y: .1
+                                    halign: 'center'
+
+                                Image:
+                                    size: root.size
+                                    id: l
+                                    source: 'A.png'
+                                MDAnchorLayout:
+                                    size_hint_y: .1
+                                    MDFillRoundFlatButton:
+                                        id: a
+                                        text: 'Посмотреть'
+                                        on_release: root.open_link('a')
+                        MDCard:
+                            padding: 20
+                            size_hint: .5, .5
+                            line_color: (0.2, 0.2, 0.5, 0.8)
+                            MDBoxLayout:
+                                orientation: 'vertical'
+                                MDLabel:
+                                    text: "Памятка к выступлению"
+                                    font_size: 32
+                                    size_hint_y: .1
+                                    halign: 'center'
+
+                                Image:
+                                    size: root.size
+                                    id: l
+                                    source: 'B.jpg'
+                                MDAnchorLayout:
+                                    size_hint_y: .1
+                                    MDFillRoundFlatButton:
+                                        id: b
+                                        text: 'Посмотреть'
+                                        on_release: root.open_link('b')
+                        MDCard:
+                            padding: 20
+                            size_hint: .5, .5
+                            line_color: (0.2, 0.2, 0.5, 0.8)
+                            MDBoxLayout:
+                                orientation: 'vertical'
+                                MDLabel:
+                                    text: "Критерии оценивания"
+                                    font_size: 32
+                                    size_hint_y: .1
+                                    halign: 'center'
+
+                                Image:
+                                    size: root.size
+                                    id: l
+                                    source: 'krit.png'
+                                MDAnchorLayout:
+                                    size_hint_y: .1
+                                    MDFillRoundFlatButton:
+                                        id: c
+                                        text: 'Посмотреть'
+                                        on_release: root.open_link('c')
+                        MDCard:
+                            padding: 20
+                            size_hint: .5, .5
+                            line_color: (0.2, 0.2, 0.5, 0.8)
+                            MDBoxLayout:
+                                orientation: 'vertical'
+                                MDLabel:
+                                    text: "Пямятка оформления работы"
+                                    font_size: 32
+                                    size_hint_y: .1
+                                    halign: 'center'
+
+                                Image:
+                                    size: root.size
+                                    id: l
+                                    source: 'D.jpg'
+                                MDAnchorLayout:
+                                    size_hint_y: .1
+                                    MDFillRoundFlatButton:
+                                        id: d
+                                        text: 'Посмотреть'
+                                        on_release: root.open_link('d')
+
+
+
+
+                MDBottomNavigationItem:
+                    name: 'screen 3'
+                    id: acc
+                    text: 'Аккаунт'
+                    icon: 'account'
+
